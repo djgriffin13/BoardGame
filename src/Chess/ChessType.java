@@ -7,5 +7,6 @@ public enum ChessType {
 	BISHOP,
 	ROOK,
 	QUEEN,
+	NewType,
 	KING;	
 }
