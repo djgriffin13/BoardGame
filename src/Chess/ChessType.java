@@ -8,4 +8,5 @@ public enum ChessType {
 	ROOK,
 	QUEEN,
 	KING;	
+	// this is a conflicting comment
 }
