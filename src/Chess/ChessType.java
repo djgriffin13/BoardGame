@@ -8,4 +8,5 @@ public enum ChessType {
 	ROOK,
 	QUEEN,
 	KING;	
+	// I just added a pointless comment
 }
