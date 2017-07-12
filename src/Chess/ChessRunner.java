@@ -2,6 +2,7 @@ package Chess;
 
 import Chess.Pieces.ChessPiece;
 import GeneralGame.Player;
+import GeneralGame.GUI.GameFrame;
 
 /**
  * @author Daniel
@@ -19,10 +20,13 @@ public class ChessRunner {
 	 */
 	private ChessPlayer black, white;
 	
+	
+	GameFrame gm;
 	/**
 	 * Constructor that statrs the game
 	 */
-	private ChessRunner(){
+	public ChessRunner(){
+		gm = new GameFrame();
 		gb = new ChessBoard();
 		black = new ChessPlayer("Black", false);
 		white = new ChessPlayer("White", true);
