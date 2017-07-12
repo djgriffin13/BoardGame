@@ -77,7 +77,7 @@ public class ChessRunner {
 			return false;
 		}
 		// makes a check message if you would be or are still in check
-		if (gb.isInThrenedAfterMove(gb.getKingPosition(team),cm)){
+		if (gb.isThrenedAfterMove(gb.getKingPosition(team),cm)){
 			checkErr();
 			return false;
 		}

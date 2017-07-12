@@ -275,7 +275,8 @@ display();
 			int side;
 			if (d.y>4)side = 7;
 			else side = 0;
-			if (isThretened(o)||isThretened(new location(o.x,(o.y+d.y)/2))) return false;
+			location midPoint = new location(o.x,(o.y+d.y)/2);
+			if (isThretened(o)||isThrenedAfterMove(midPoint,new ChessMove(o,midPoint))) return false;
 			if (!getPiece(o.x,side).getMoved())
 				castle = true;
 			else return false;
@@ -293,10 +294,10 @@ display();
 		}
 		return true;
 	}
-	public boolean isInThrenedAfterMove(boolean team, ChessMove cm) {
-		return isInThrenedAfterMove(getKingPosition(team),cm);
+	public boolean isInCheckAfterMove(boolean team, ChessMove cm) {
+		return isThrenedAfterMove(getKingPosition(team),cm);
 	}
-	public boolean isInThrenedAfterMove(location l, ChessMove cm) {
+	public boolean isThrenedAfterMove(location l, ChessMove cm) {
 // should try with getPieces() method. Knight, and probably king are moving off the board.
 		Piece temp =  this.pieces[cm.getDestination().x][cm.getDestination().y];
 		this.pieces[cm.getDestination().x][cm.getDestination().y] = this.pieces[cm.getOrigin().x][cm.getOrigin().y];
@@ -397,7 +398,7 @@ display();
 					posibleMoves = cp.getPosibleMoves();
 					while (posibleMoves.size()>0){
 						cm = posibleMoves.pop();
-						if(checkMove(cm)&&!isInThrenedAfterMove(player,cm))
+						if(checkMove(cm)&&!isInCheckAfterMove(player,cm))
 							return GameOverType.FALSE;
 					}
 				}
