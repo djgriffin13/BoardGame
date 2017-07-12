@@ -48,11 +48,11 @@ public final class Bishop extends ChessPiece {
 			pm.push(new ChessMove(o,new location(i++,j--)));
 		}
 		 i=x-1; j = y+1;
-		while(i < 0 && j >= 8){
+		while(i >= 0 && j < 8){
 			pm.push(new ChessMove(o,new location(i--,j++)));
 		}
 		 i=x-1; j = y-1;
-		while(i < 0 && j >= 0){
+		while(i >= 0 && j >= 0){
 			pm.push(new ChessMove(o,new location(i--,j--)));
 		}
 		return pm;
